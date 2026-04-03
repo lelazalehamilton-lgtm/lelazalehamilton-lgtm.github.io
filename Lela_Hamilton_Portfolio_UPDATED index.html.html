@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lela Z. Hamilton — Data Analytics & Operations Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#1B2A6B;--navy-deep:#0D1635;--gold:#C9A84C;--gold-light:#E8C96A;--gold-pale:rgba(201,168,76,0.12);--cream:#F9F7F2;--white:#FFFFFF;--gray:#64748B;--border:rgba(27,42,107,0.1);}
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--navy-deep);overflow-x:hidden;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,22,53,0.97);backdrop-filter:blur(12px);padding:1rem 4rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(201,168,76,0.3);}
+  .nav-logo{font-family:'Cormorant Garamond',serif;color:var(--white);font-size:1.4rem;font-weight:700;}
+  .nav-logo span{color:var(--gold);}
+  .nav-links{display:flex;gap:2rem;list-style:none;}
+  .nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.83rem;font-weight:500;letter-spacing:0.8px;text-transform:uppercase;transition:color 0.3s;}
+  .nav-links a:hover{color:var(--gold);}
+  .nav-cta{background:var(--gold)!important;color:var(--navy-deep)!important;padding:0.45rem 1.1rem;border-radius:0.25rem;font-weight:600!important;}
+  .hero{min-height:100vh;background:var(--navy-deep);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:8rem 0 4rem;overflow:hidden;position:relative;}
+  .hero-left{padding:3rem 3rem 3rem 4rem;position:relative;z-index:2;}
+  .hero-right{background:linear-gradient(135deg,var(--navy) 0%,#243580 100%);height:100%;display:flex;align-items:center;justify-content:center;padding:4rem 3rem;position:relative;}
+  .hero-right::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(45deg,transparent,transparent 30px,rgba(201,168,76,0.03) 30px,rgba(201,168,76,0.03) 31px);}
+  .hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:var(--gold-pale);border:1px solid rgba(201,168,76,0.35);color:var(--gold);padding:0.45rem 1rem;border-radius:2rem;font-size:0.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:2rem;animation:fadeUp 0.5s ease both;}
+  .pulse{width:7px;height:7px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite;}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,5.5vw,5rem);font-weight:700;color:var(--white);line-height:1.08;margin-bottom:1rem;animation:fadeUp 0.5s ease 0.1s both;}
+  .hero h1 em{color:var(--gold);font-style:normal;}
+  .hero-role{font-size:0.95rem;color:rgba(255,255,255,0.55);font-weight:400;letter-spacing:0.5px;margin-bottom:1.5rem;line-height:1.6;animation:fadeUp 0.5s ease 0.2s both;}
+  .hero-desc{font-size:0.92rem;color:rgba(255,255,255,0.45);line-height:1.85;margin-bottom:2.5rem;max-width:480px;animation:fadeUp 0.5s ease 0.3s both;}
+  .hero-btns{display:flex;gap:1rem;animation:fadeUp 0.5s ease 0.4s both;}
+  .btn-gold{background:var(--gold);color:var(--navy-deep);padding:0.8rem 1.8rem;border-radius:0.3rem;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.3s;}
+  .btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,168,76,0.3);}
+  .btn-outline{background:transparent;color:rgba(255,255,255,0.8);padding:0.8rem 1.8rem;border-radius:0.3rem;text-decoration:none;font-weight:500;font-size:0.9rem;border:1px solid rgba(255,255,255,0.25);transition:all 0.3s;}
+  .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+  .hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:3rem;animation:fadeUp 0.5s ease 0.5s both;}
+  .hero-stat{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:1rem 1.25rem;border-radius:0.5rem;border-left:3px solid var(--gold);}
+  .stat-n{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--gold);}
+  .stat-l{font-size:0.7rem;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase;}
+  .cert-stack{display:flex;flex-direction:column;gap:1rem;width:100%;max-width:360px;position:relative;z-index:2;}
+  .cert-card{background:rgba(255,255,255,0.06);border:1px solid rgba(201,168,76,0.2);padding:1.1rem 1.4rem;border-radius:0.75rem;display:flex;align-items:center;gap:1rem;transition:all 0.3s;}
+  .cert-card:hover{background:rgba(201,168,76,0.08);border-color:var(--gold);transform:translateX(5px);}
+  .cert-icon{font-size:1.6rem;}
+  .cert-title{font-size:0.85rem;font-weight:600;color:var(--white);margin-bottom:0.2rem;}
+  .cert-sub{font-size:0.72rem;color:rgba(255,255,255,0.45);}
+  .cert-badge{margin-left:auto;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-size:0.65rem;font-weight:700;padding:0.2rem 0.55rem;border-radius:2rem;white-space:nowrap;}
+  section{padding:6rem 4rem;}
+  .container{max-width:1100px;margin:0 auto;}
+  .sec-label{font-size:0.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
+  .sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;color:var(--navy);margin-bottom:0.75rem;line-height:1.2;}
+  .sec-rule{width:50px;height:2px;background:var(--gold);margin-bottom:3rem;}
+  .sec-title-white{color:var(--white);}
+  #skills{background:var(--white);}
+  .skills-intro{max-width:650px;color:var(--gray);line-height:1.8;font-size:0.93rem;margin-bottom:3rem;}
+  .skills-categories{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+  .skill-cat{background:var(--cream);border:1px solid var(--border);border-radius:0.75rem;padding:1.75rem;border-top:3px solid var(--gold);transition:transform 0.3s,box-shadow 0.3s;}
+  .skill-cat:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(27,42,107,0.08);}
+  .skill-cat-icon{font-size:1.8rem;margin-bottom:0.75rem;}
+  .skill-cat h4{font-size:0.76rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--navy);margin-bottom:1rem;}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}
+  .skill-tag{background:var(--white);border:1px solid var(--border);color:#334155;font-size:0.74rem;font-weight:500;padding:0.22rem 0.6rem;border-radius:2rem;transition:all 0.2s;}
+  .skill-tag:hover{background:var(--navy);color:var(--white);border-color:var(--navy);}
+  .skill-tag.gold{background:var(--gold-pale);border-color:rgba(201,168,76,0.3);color:#7A5C10;}
+  #capstone{background:var(--cream);}
+  .capstone-banner{background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 100%);border-radius:1rem;padding:3rem;margin-bottom:2.5rem;border:1px solid rgba(201,168,76,0.25);position:relative;overflow:hidden;}
+  .capstone-banner h3{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--white);margin-bottom:0.5rem;}
+  .capstone-banner h3 span{color:var(--gold);}
+  .capstone-banner p{color:rgba(255,255,255,0.6);font-size:0.92rem;line-height:1.75;max-width:680px;margin-bottom:1.5rem;}
+  .cap-tags{display:flex;flex-wrap:wrap;gap:0.5rem;}
+  .cap-tag{background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);color:var(--gold);padding:0.28rem 0.75rem;border-radius:2rem;font-size:0.75rem;font-weight:600;}
+  .val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+  .val-card{background:var(--white);padding:1.5rem;border-radius:0.75rem;border:1px solid var(--border);box-shadow:0 2px 12px rgba(27,42,107,0.05);transition:transform 0.3s,box-shadow 0.3s;}
+  .val-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(27,42,107,0.1);}
+  .val-n{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:700;color:var(--gold);line-height:1;}
+  .val-pass{display:inline-block;background:#DCFCE7;color:#166534;font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:2rem;letter-spacing:1px;margin:0.4rem 0 0.6rem;}
+  .val-card h4{font-size:0.88rem;font-weight:600;color:var(--navy);margin-bottom:0.35rem;}
+  .val-card p{font-size:0.8rem;color:var(--gray);line-height:1.5;}
+  #experience{background:var(--white);}
+  .exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+  .exp-company{background:var(--cream);border:1px solid var(--border);border-radius:0.75rem;overflow:hidden;}
+  .exp-company-header{background:linear-gradient(135deg,var(--navy),#2A3F8F);padding:1.5rem 2rem;display:flex;align-items:center;gap:1rem;}
+  .company-logo{font-size:2rem;}
+  .company-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--white);font-weight:700;}
+  .company-years{font-size:0.75rem;color:var(--gold);font-weight:600;letter-spacing:1px;}
+  .exp-roles{padding:1.5rem 2rem;}
+  .exp-role{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+  .exp-role:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .role-title{font-weight:600;font-size:0.92rem;color:var(--navy);margin-bottom:0.2rem;}
+  .role-date{font-size:0.75rem;color:var(--gold);font-weight:600;letter-spacing:0.5px;margin-bottom:0.75rem;}
+  .role-points{list-style:none;}
+  .role-points li{font-size:0.83rem;color:#475569;line-height:1.65;padding:0.2rem 0 0.2rem 1.1rem;position:relative;}
+  .role-points li::before{content:'▸';position:absolute;left:0;color:var(--gold);font-size:0.7rem;top:0.28rem;}
+  .highlight-tag{display:inline-block;background:var(--gold-pale);border:1px solid rgba(201,168,76,0.3);color:#7A5C10;font-size:0.68rem;font-weight:700;padding:0.12rem 0.45rem;border-radius:2rem;margin-left:0.4rem;vertical-align:middle;}
+  #highlights{background:var(--cream);}
+  .highlights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+  .hl-card{background:var(--white);border:1px solid var(--border);border-radius:0.75rem;padding:1.75rem;transition:transform 0.3s,box-shadow 0.3s;border-left:4px solid var(--gold);}
+  .hl-card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(27,42,107,0.08);}
+  .hl-icon{font-size:1.5rem;margin-bottom:0.75rem;}
+  .hl-card h4{font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;}
+  .hl-card p{font-size:0.8rem;color:var(--gray);line-height:1.6;}
+  #tools{background:var(--navy-deep);}
+  .tools-intro{color:rgba(255,255,255,0.5);font-size:0.92rem;line-height:1.7;max-width:600px;margin-bottom:3rem;}
+  .tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+  .tool-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);padding:1.5rem 1rem;border-radius:0.65rem;text-align:center;transition:all 0.3s;}
+  .tool-card:hover{background:rgba(201,168,76,0.08);border-color:rgba(201,168,76,0.3);transform:translateY(-4px);}
+  .tool-emoji{font-size:1.8rem;margin-bottom:0.65rem;}
+  .tool-name{font-size:0.83rem;font-weight:600;color:var(--white);margin-bottom:0.2rem;}
+  .tool-cat{font-size:0.68rem;color:rgba(255,255,255,0.35);letter-spacing:1px;text-transform:uppercase;}
+  #contact{background:var(--navy-deep);}
+  .contact-wrap{display:grid;grid-template-columns:1.2fr 0.8fr;gap:4rem;align-items:start;}
+  .contact-left h3{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--white);margin-bottom:1rem;}
+  .contact-left p{color:rgba(255,255,255,0.5);line-height:1.8;font-size:0.93rem;margin-bottom:2.5rem;}
+  .contact-rows{display:flex;flex-direction:column;gap:1rem;}
+  .contact-row{display:flex;align-items:center;gap:1rem;}
+  .c-icon{width:42px;height:42px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.25);border-radius:0.5rem;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+  .c-val{font-size:0.9rem;color:var(--white);font-weight:500;}
+  .c-lbl{font-size:0.72rem;color:rgba(255,255,255,0.35);letter-spacing:1px;}
+  .contact-card{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:1rem;padding:2rem;}
+  .open-pill{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);color:var(--gold);padding:0.55rem 1.1rem;border-radius:2rem;font-size:0.82rem;font-weight:600;margin-bottom:1.5rem;}
+  .open-dot{width:7px;height:7px;background:#4ADE80;border-radius:50%;animation:pulse 2s infinite;}
+  .c-links{display:flex;flex-direction:column;gap:0.75rem;}
+  .c-link{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);padding:0.8rem 1rem;border-radius:0.5rem;text-decoration:none;font-size:0.86rem;font-weight:500;display:flex;align-items:center;gap:0.75rem;transition:all 0.3s;}
+  .c-link:hover{background:rgba(201,168,76,0.1);border-color:rgba(201,168,76,0.3);color:var(--gold);}
+  .c-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:0.4rem;}
+  .c-tagline{font-size:0.8rem;color:rgba(255,255,255,0.4);line-height:1.6;margin-bottom:1.5rem;}
+  footer{background:#080E20;padding:1.75rem 4rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(201,168,76,0.2);}
+  footer p{color:rgba(255,255,255,0.3);font-size:0.8rem;}
+  footer span{color:var(--gold);}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.4);}}
+  .fade-in{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease;}
+  .fade-in.visible{opacity:1;transform:translateY(0);}
+  @media(max-width:900px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}.hero{grid-template-columns:1fr;padding:7rem 1.5rem 3rem;}.hero-right{display:none;}section{padding:4rem 1.5rem;}.skills-categories,.val-grid,.highlights-grid{grid-template-columns:1fr 1fr;}.exp-grid,.contact-wrap{grid-template-columns:1fr;}.tools-grid{grid-template-columns:repeat(2,1fr);}footer{flex-direction:column;gap:0.5rem;text-align:center;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">Lela Z. <span>Hamilton</span></div>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#capstone">Capstone</a></li>
+    <li><a href="#hrprojects">HR Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#highlights">Highlights</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge"><div class="pulse"></div> HRIS &amp; Data Analytics Professional | ExxonMobil Experience | Rutgers Certified</div>
+    <h1>Lela Z.<br><em>Hamilton</em></h1>
+    <p class="hero-role">Data Analytics &amp; HR Operations Professional &nbsp;·&nbsp; HRIS Systems &nbsp;·&nbsp; Workforce Analytics &nbsp;·&nbsp; Financial Trade Validation</p>
+    <p class="hero-desc">Data-driven professional with 10+ years supporting enterprise HR and training systems at ExxonMobil and Shell Oil. Recently completed Rutgers Data Analytics program with hands-on experience in SQL, Excel, Python, and Tableau. Passionate about transforming HR data into actionable insights.</p>
+    <div class="hero-btns">
+      <a href="#capstone" class="btn-gold">View Capstone Project</a>
+      <a href="#contact" class="btn-outline">Contact Me</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="stat-n">10+</div><div class="stat-l">Years Enterprise Experience</div></div>
+      <div class="hero-stat"><div class="stat-n">6</div><div class="stat-l">UAT Validations Passed</div></div>
+      <div class="hero-stat"><div class="stat-n">2K+</div><div class="stat-l">Employees Supported</div></div>
+      <div class="hero-stat"><div class="stat-n">40K+</div><div class="stat-l">Records Digitized</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="cert-stack">
+      <div class="cert-card"><div class="cert-icon">🎓</div><div><div class="cert-title">Data Analytics Certificate</div><div class="cert-sub">Rutgers University · GPA: 4.0 / 4.0 · Capstone: 130%</div></div><div class="cert-badge">2026 ✓</div></div>
+      <div class="cert-card"><div class="cert-icon">🏦</div><div><div class="cert-title">UAT Trade Validation</div><div class="cert-sub">Broadridge BPS · FINRA/SEC</div></div><div class="cert-badge">All PASS</div></div>
+      <div class="cert-card"><div class="cert-icon">🤖</div><div><div class="cert-title">AI Certification</div><div class="cert-sub">Coursera · ExxonMobil</div></div><div class="cert-badge">Certified</div></div>
+      <div class="cert-card"><div class="cert-icon">☁️</div><div><div class="cert-title">Workday Pro Certification</div><div class="cert-sub">In Progress · Self-Study</div></div><div class="cert-badge">In Progress</div></div>
+      <div class="cert-card"><div class="cert-icon">🎓</div><div><div class="cert-title">BS Business Management</div><div class="cert-sub">University of Phoenix</div></div><div class="cert-badge">BSBM</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="sec-label fade-in">What I Bring</div>
+    <h2 class="sec-title fade-in">Skills &amp; Competencies</h2>
+    <div class="sec-rule fade-in"></div>
+    <p class="skills-intro fade-in">A rare combination of enterprise-grade technical skills, deep HR operations experience, and financial compliance expertise developed across ExxonMobil and Shell Oil — now enhanced with advanced data analytics capabilities from Rutgers University.</p>
+    <div class="skills-categories">
+      <div class="skill-cat fade-in"><div class="skill-cat-icon">📊</div><h4>Data Analytics</h4><div class="skill-tags"><span class="skill-tag gold">Python</span><span class="skill-tag gold">Pandas</span><span class="skill-tag gold">Matplotlib</span><span class="skill-tag gold">Seaborn</span><span class="skill-tag">SQL</span><span class="skill-tag">Tableau</span><span class="skill-tag">Power BI</span><span class="skill-tag">Google Data Studio</span><span class="skill-tag">EMERALD People Analytics</span><span class="skill-tag">Advanced Excel</span><span class="skill-tag">R / RStudio</span><span class="skill-tag">Machine Learning</span></div></div>
+      <div class="skill-cat fade-in"><div class="skill-cat-icon">👥</div><h4>HR &amp; Operations</h4><div class="skill-tags"><span class="skill-tag gold">HRIS Administration</span><span class="skill-tag gold">EMConnect (Workday-equiv)</span><span class="skill-tag gold">Employee Relations</span><span class="skill-tag">Grievance Processing</span><span class="skill-tag">Disability Case Management</span><span class="skill-tag">FMLA / STD / LTD / IPI</span><span class="skill-tag">Onboarding &amp; Offboarding</span><span class="skill-tag">LMS Administration</span><span class="skill-tag">Workforce Analytics</span><span class="skill-tag">WebCAT Training System</span></div></div>
+      <div class="skill-cat fade-in"><div class="skill-cat-icon">🏦</div><h4>Financial &amp; Compliance</h4><div class="skill-tags"><span class="skill-tag gold">Broadridge BPS</span><span class="skill-tag gold">UAT Trade Validation</span><span class="skill-tag gold">FINRA Compliance</span><span class="skill-tag">SEC Regulatory Standards</span><span class="skill-tag">SAP R/3 Payroll</span><span class="skill-tag">SAP CATS</span><span class="skill-tag">Contract Management</span><span class="skill-tag">Budget Reconciliation ($50K+)</span><span class="skill-tag">Vendor Procurement</span><span class="skill-tag">Audit Documentation</span></div></div>
+      <div class="skill-cat fade-in"><div class="skill-cat-icon">⚙️</div><h4>Enterprise Systems</h4><div class="skill-tags"><span class="skill-tag gold">SAP R/3 &amp; SAPgui</span><span class="skill-tag gold">Azure DevOps (ADO)</span><span class="skill-tag gold">SharePoint Admin</span><span class="skill-tag">ServiceNow</span><span class="skill-tag">CTRAX / Beeline</span><span class="skill-tag">EZPay</span><span class="skill-tag">Chrome River</span><span class="skill-tag">e-Memory</span><span class="skill-tag">MongoDB</span><span class="skill-tag">OneDrive</span></div></div>
+      <div class="skill-cat fade-in"><div class="skill-cat-icon">🎯</div><h4>Leadership &amp; Admin</h4><div class="skill-tags"><span class="skill-tag gold">Team Lead / SME</span><span class="skill-tag gold">C-Suite Executive Support</span><span class="skill-tag gold">Zoom SME</span><span class="skill-tag">High-Volume Case Mgmt</span><span class="skill-tag">Calendar Management</span><span class="skill-tag">SOPs &amp; Process Guides</span><span class="skill-tag">Global Training Coordination</span><span class="skill-tag">Agile Methodologies</span><span class="skill-tag">Data Storytelling</span></div></div>
+      <div class="skill-cat fade-in"><div class="skill-cat-icon">🔐</div><h4>Technical &amp; IT</h4><div class="skill-tags"><span class="skill-tag gold">IT Ambassador / Focal Point</span><span class="skill-tag gold">Windows 10 Administration</span><span class="skill-tag">Predictive Modeling</span><span class="skill-tag">Database Optimization</span><span class="skill-tag">Ticketing Systems</span><span class="skill-tag">Contractor Onboarding</span><span class="skill-tag">Vodcast / Audacity</span><span class="skill-tag">IT Think Secure</span><span class="skill-tag">Distribution List Mgmt</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="capstone">
+  <div class="container">
+    <div class="sec-label fade-in">Featured Project</div>
+    <h2 class="sec-title fade-in">Capstone Project — Rutgers University 2026</h2>
+    <div class="sec-rule fade-in"></div>
+    <div class="capstone-banner fade-in">
+      <h3>Broker ABC — <span>UAT Trade Validation Dashboard</span></h3>
+      <p>Designed and executed a complete 6-validation UAT framework for a foreign-owned bank seeking FINRA/SEC Broker-Dealer licensing on the Broadridge BPS platform — which processes over $10 trillion in daily securities transactions for the world's largest financial firms.</p>
+      <div class="cap-tags">
+        <span class="cap-tag">Python</span><span class="cap-tag">Pandas</span><span class="cap-tag">Matplotlib</span><span class="cap-tag">Seaborn</span><span class="cap-tag">Excel</span><span class="cap-tag">Broadridge BPS</span><span class="cap-tag">FINRA Compliance</span><span class="cap-tag">UAT Testing</span><span class="cap-tag">Data Visualization</span><span class="cap-tag">Jupyter Notebook</span>
+      </div>
+    </div>
+    <div class="val-grid">
+      <div class="val-card fade-in"><div class="val-n">V1</div><div class="val-pass">PASS ✓</div><h4>Trade Count Validation</h4><p>9 buy &amp; 9 sell trades — exceeding FINRA 5-trade minimum</p></div>
+      <div class="val-card fade-in"><div class="val-n">V2</div><div class="val-pass">PASS ✓</div><h4>DR/CR Distribution</h4><p>52.9% CR / 47.1% DR — confirmed double-entry bookkeeping</p></div>
+      <div class="val-card fade-in"><div class="val-n">V3</div><div class="val-pass">PASS ✓</div><h4>Net Money by Category</h4><p>$2.28M equity trades validated across all transaction categories</p></div>
+      <div class="val-card fade-in"><div class="val-n">V4</div><div class="val-pass">PASS ✓</div><h4>Net Money by Account</h4><p>Buy Long vs Sell Short reconciled — MCUSA, Fully Paid &amp; Margin</p></div>
+      <div class="val-card fade-in"><div class="val-n">V5</div><div class="val-pass">PASS ✓</div><h4>Trade Volume by Security</h4><p>4 securities: AA &amp; AXP equities, 8K82124 &amp; 8BRTZN4 options</p></div>
+      <div class="val-card fade-in"><div class="val-n">V6</div><div class="val-pass">PASS ✓</div><h4>Price Point Consistency</h4><p>All prices verified consistent across counterparty accounts &amp; audit trail</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="hrprojects" style="background:var(--white);">
+  <div class="container">
+    <div class="sec-label fade-in">HR Analytics Work</div>
+    <h2 class="sec-title fade-in">HR-Focused Projects</h2>
+    <div class="sec-rule fade-in"></div>
+    <div class="val-grid">
+      <div class="val-card fade-in"><div class="val-n" style="font-size:2rem;">📊</div><div class="val-pass">ExxonMobil</div><h4>Training Compliance Dashboard</h4><p>Built Tableau &amp; SQL dashboards monitoring training completion rates, compliance levels, and cycle times across global teams — enabling real-time workforce readiness tracking for leadership</p></div>
+      <div class="val-card fade-in"><div class="val-n" style="font-size:2rem;">👥</div><div class="val-pass">ExxonMobil</div><h4>Employee Onboarding Data Analysis</h4><p>Analyzed and streamlined onboarding data for 2,000+ employees during large-scale site closures using EMConnect HRIS — improving HR workflows and operational efficiency across teams</p></div>
+      <div class="val-card fade-in"><div class="val-n" style="font-size:2rem;">🤖</div><div class="val-pass">Python Automation</div><h4>WebCAT HR System Automation</h4><p>Designed Python automation for WebCAT global training system — saving 10–15 hrs/month, reducing disruptions 30%, and improving cross-business collaboration by 75%</p></div>
+      <div class="val-card fade-in"><div class="val-n" style="font-size:2rem;">🏥</div><div class="val-pass">Shell Oil</div><h4>Disability &amp; Absence Case Management</h4><p>Managed 30,000 short-term disability absences — FMLA, STD, LTD, IPI — improving employee return-to-work processes and reducing costs by over 30% through data-driven process improvement</p></div>
+      <div class="val-card fade-in"><div class="val-n" style="font-size:2rem;">📋</div><div class="val-pass">Rutgers 2026</div><h4>UAT Trade Validation Dashboard</h4><p>Capstone: validated 34 financial transactions against FINRA &amp; SEC regulations using Python, Pandas &amp; Seaborn — earned 130% grade demonstrating analytics applied to compliance</p></div>
+      <div class="val-card fade-in"><div class="val-n" style="font-size:2rem;">📈</div><div class="val-pass">ExxonMobil</div><h4>Workforce Readiness Reporting</h4><p>Produced executive-level workforce readiness reports using Tableau and SQL — transforming raw HR training data into actionable compliance strategy insights for senior leadership</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="sec-label fade-in">Career History</div>
+    <h2 class="sec-title fade-in">Professional Experience</h2>
+    <div class="sec-rule fade-in"></div>
+    <div class="exp-grid">
+      <div class="exp-company fade-in">
+        <div class="exp-company-header"><div class="company-logo">⚡</div><div><div class="company-name">ExxonMobil</div><div class="company-years">2018 – 2025 · Houston, TX → Clinton, NJ</div></div></div>
+        <div class="exp-roles">
+          <div class="exp-role">
+            <div class="role-title">Administration Process Specialist / Central Library &amp; Information Project Lead <span class="highlight-tag">Dual Role</span></div>
+            <div class="role-date">2022 – 2025 · Technology &amp; Engineering · Clinton, NJ</div>
+            <ul class="role-points">
+              <li>Point of contact for day-to-day operations and work direction during the central library project 2025–2027 site closure</li>
+              <li>Recruited and trained contractors, ensuring smooth productivity and efficiency to meet end-of-parallel-project deadlines</li>
+              <li>Experienced hands-on with SAP HR, SAP CATS, SAP Time writing and data reporting across global HR operations</li>
+              <li>Led office operations, facilities coordination, and onboarding for over 1,500 personnel streamlining HR operations during large site closure using HRIS</li>
+              <li>Workday HCM certification in progress; experienced partnering with HR/IT teams and senior management on system enhancements, employee relations, reporting and user support</li>
+            </ul>
+          </div>
+          <div class="exp-role">
+            <div class="role-title">Competency &amp; Training Analyst <span class="highlight-tag">Promotion</span></div>
+            <div class="role-date">Aug 2020 – July 2022 · Houston, TX</div>
+            <ul class="role-points">
+              <li>Team Lead overseeing global training operations, compliance &amp; records management</li>
+              <li>Designed Python automation saving 10–15 hrs/month, reducing disruptions 30%</li>
+              <li>Improved cross-business collaboration 75% &amp; reduced training lead time 20%</li>
+              <li>Led IIHL/TapRoot training scheduling across Americas, Europe &amp; Africa</li>
+              <li>Produced Tableau/SQL dashboards for leadership workforce compliance reporting</li>
+            </ul>
+          </div>
+          <div class="exp-role">
+            <div class="role-title">Technician Assistant — OE-SSHE</div>
+            <div class="role-date">May 2018 – Aug 2020 · Houston, TX</div>
+            <ul class="role-points">
+              <li>Zoom SME — proactively trained supervisors, admins &amp; teams enterprise-wide</li>
+              <li>Managed $50K credit card reconciliation for staff travel &amp; events (Chrome River)</li>
+              <li>Processed 20+ staff payroll exceptions monthly through SAPgui application</li>
+              <li>Handpicked as IT Ambassador — reduced software downtime, increased productivity 40%</li>
+              <li>Gatekeeper for disability management: FMLA, STD, LTD, IPI electronic records</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="exp-company fade-in">
+        <div class="exp-company-header"><div class="company-logo">🐚</div><div><div class="company-name">Shell Oil Company</div><div class="company-years">Houston, TX</div></div></div>
+        <div class="exp-roles">
+          <div class="exp-role">
+            <div class="role-title">Admin Case Manager — Shell Health</div>
+            <div class="role-date">Shell Oil Company · Houston, TX</div>
+            <ul class="role-points">
+              <li>Managed 30,000 short term disability absences for global and US business caseloads — FMLA, STD, LTD, IPI</li>
+              <li>Improved employee return-to-work processes, reducing costs by over 30%</li>
+              <li>Consulted with patients, oncologists, hospitals &amp; clinics on quality care</li>
+              <li>Developed &amp; maintained relations with community referral sources &amp; stakeholders</li>
+              <li>Implemented bi-weekly admin meetings to simplify rehabilitation absence guidelines</li>
+            </ul>
+          </div>
+          <div class="exp-role">
+            <div class="role-title">IT Focal Point <span class="highlight-tag">Think Secure Ambassador</span></div>
+            <div class="role-date">Shell Oil Company · Houston, TX</div>
+            <ul class="role-points">
+              <li>Handpicked as Shell IT Think Secure Ambassador — systems security focal point</li>
+              <li>Administrator for MS Windows files, SAP records &amp; database platforms</li>
+              <li>Increased customer satisfaction surveys &amp; proficiencies by over 30%</li>
+              <li>Created SharePoint subfolder libraries for senior SSHE consultants &amp; advisors</li>
+              <li>Managed conference logistics &amp; distribution lists for Presidents &amp; Upstream teams</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="highlights">
+  <div class="container">
+    <div class="sec-label fade-in">Recognition &amp; Achievements</div>
+    <h2 class="sec-title fade-in">Career Highlights</h2>
+    <div class="sec-rule fade-in"></div>
+    <div class="highlights-grid">
+      <div class="hl-card fade-in"><div class="hl-icon">🏆</div><h4>Internal Promotion — ExxonMobil</h4><p>Promoted to Administration Process Specialist within Upstream Integrated Solutions</p></div>
+      <div class="hl-card fade-in"><div class="hl-icon">🎖️</div><h4>Zoom SME — ExxonMobil</h4><p>Selected as Subject Matter Expert for Zoom platform across OE-SSHE organization</p></div>
+      <div class="hl-card fade-in"><div class="hl-icon">🌍</div><h4>Global Training Lead</h4><p>Led IIHL/TapRoot training scheduling across Americas, Europe, and Africa</p></div>
+      <div class="hl-card fade-in"><div class="hl-icon">🛡️</div><h4>IT Think Secure Ambassador</h4><p>Handpicked by Shell Oil as IT security ambassador and systems focal point</p></div>
+      <div class="hl-card fade-in"><div class="hl-icon">🏙️</div><h4>City of Atlanta — SME</h4><p>Selected as Subject Matter Expert for City of Atlanta operations initiative</p></div>
+      <div class="hl-card fade-in"><div class="hl-icon">📋</div><h4>SharePoint TAS Tester</h4><p>Technical Assistant SharePoint Tester — ExxonMobil internal systems validation</p></div>
+      <div class="hl-card fade-in"><div class="hl-icon">🤝</div><h4>Houston Admin Network</h4><p>AJFTM Committee Member — Life Safety Lead, Houston Admin Network</p></div>
+      <div class="hl-card fade-in"><div class="hl-icon">💼</div><h4>C-Suite Executive Support</h4><p>Backfill support for Executive Leadership Teams at ExxonMobil</p></div>
+      <div class="hl-card fade-in"><div class="hl-icon">🎓</div><h4>Rutgers Certified — 2026</h4><p>Data Analytics Certificate · GPA 4.0 / 4.0 · Capstone 130% · Rutgers University Bootcamp Graduate</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="container">
+    <div class="sec-label fade-in">Technical Proficiency</div>
+    <h2 class="sec-title sec-title-white fade-in">Tools &amp; Platforms</h2>
+    <div class="sec-rule fade-in"></div>
+    <p class="tools-intro fade-in">Enterprise-grade tools from ExxonMobil and Shell Oil, combined with modern analytics platforms from Rutgers Data Analytics training.</p>
+    <div class="tools-grid">
+      <div class="tool-card fade-in"><div class="tool-emoji">🐍</div><div class="tool-name">Python</div><div class="tool-cat">Analytics</div></div>
+      <div class="tool-card fade-in"><div class="tool-emoji">🐼</div><div class="tool-name">Pandas</div><div class="tool-cat">Data</div></div>
+      <div class="tool-card fade-in"><div class="tool-emoji">📊</div><div class="tool-name">Tableau</div><div class="tool-cat">BI</div></div>
+      <div class="tool-card fade-in"><div class="tool-emoji">💾</div><div class="tool-name">SQL</div><div class="tool-cat">Database</div></div>
+      <div class="tool-card fade-in"><div class="tool-emoji">⚙️</div><div class="tool-name">SAP R/3</div><div class="tool-cat">ERP</div></div>
+      <div class="tool-card fade-in"><div class="tool-emoji">🔷</div><div class="tool-name">Azure DevOps</div><div class="tool-cat">DevOps</div></div>
+      <div class="tool-card fade-in"><div class="tool-emoji">📁</div><div class="tool-name">SharePoint</div><div class="tool-cat">Admin</div></div>
+      <div class="tool-card fade-in"><div class="tool-emoji">🏦</div><div class="tool-name">Broadridge BPS</div><div class="tool-cat">Finance</div></div>
+      <div class="tool-card fade-in"><div class="tool-emoji">👥</div><div class="tool-name">EMConnect</div><div class="tool-cat">HRIS</div></div>
+      <div class="tool-card fade-in"><div class="tool-emoji">📋</div><div class="tool-name">Advanced Excel</div><div class="tool-cat">Analysis</div></div>
+      <div class="tool-card fade-in"><div class="tool-emoji">🤖</div><div class="tool-name">Power BI</div><div class="tool-cat">Reporting</div></div>
+      <div class="tool-card fade-in"><div class="tool-emoji">📈</div><div class="tool-name">Matplotlib</div><div class="tool-cat">Visualization</div></div>
+      <div class="tool-card fade-in"><div class="tool-emoji">🔬</div><div class="tool-name">R / RStudio</div><div class="tool-cat">Statistics</div></div>
+      <div class="tool-card fade-in"><div class="tool-emoji">🎫</div><div class="tool-name">ServiceNow</div><div class="tool-cat">Ticketing</div></div>
+      <div class="tool-card fade-in"><div class="tool-emoji">💰</div><div class="tool-name">SAP CATS</div><div class="tool-cat">Time/Billing</div></div>
+      <div class="tool-card fade-in"><div class="tool-emoji">☁️</div><div class="tool-name">MongoDB</div><div class="tool-cat">Database</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="sec-label fade-in">Let's Connect</div>
+    <h2 class="sec-title sec-title-white fade-in">Get In Touch</h2>
+    <div class="sec-rule fade-in"></div>
+    <div class="contact-wrap">
+      <div class="contact-left fade-in">
+        <h3>Open to New Opportunities</h3>
+        <p>Actively seeking roles in Data Analytics, HR Operations, Employee Relations, Financial Compliance, or Operations Management. I bring a rare combination of enterprise technical skills, HRIS expertise, and advanced analytics capabilities.</p>
+        <div class="contact-rows">
+          <div class="contact-row"><div class="c-icon">📧</div><div><div class="c-val">lelazalehamilton&#64;gmail.com</div><div class="c-lbl">Email</div></div></div>
+          <div class="contact-row"><div class="c-icon">📱</div><div><div class="c-val">210-367-3800</div><div class="c-lbl">Phone</div></div></div>
+          <div class="contact-row"><div class="c-icon">📍</div><div><div class="c-val">Randolph, New Jersey 08809</div><div class="c-lbl">Location</div></div></div>
+        </div>
+      </div>
+      <div class="contact-card fade-in">
+        <div class="c-name">Lela Z. Hamilton</div>
+        <div class="c-tagline">Rutgers Data Analytics Graduate · ExxonMobil &amp; Shell Oil Alumni · FINRA/SEC UAT Specialist</div>
+        <div class="open-pill"><div class="open-dot"></div> #OpenToWork</div>
+        <div class="c-links">
+          <a href="http://www.linkedin.com/in/lela-hamilton-276788b" class="c-link" target="_blank">💼 LinkedIn Profile</a>
+          <a href="/cdn-cgi/l/email-protection#45292029243f2429202d24282c29312a2b636673717e2228242c296b262a28" class="c-link">📧 Send Email</a>
+          <a href="#capstone" class="c-link">📊 View Capstone Project</a>
+          <a href="#skills" class="c-link">🎯 View Full Skill Set</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>Lela Z. Hamilton</span> · Data Analytics &amp; Operations Professional</p>
+  <p>Randolph, NJ · <span>Rutgers University</span> · ExxonMobil Alumni · Shell Oil Alumni</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 70);
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  window.addEventListener('s
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.boxShadow = window.scrollY > 60 ? '0 4px 24px rgba(0,0,0,0.4)' : 'none';
+  });
+</script>
+</body>
+</html>
